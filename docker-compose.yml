@@ -1,0 +1,32 @@
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:3.4.6
+    ports:
+      - '2181:2181'
+    volumes:
+      - './docker-data/zookeeper:/opt/zookeeper-3.4.6/data'
+
+  kafka:
+    image: wurstmeister/kafka:1.0.1
+    environment:
+      KAFKA_ADVERTISED_PORT: 9092
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    ports:
+      - '9092:9092'
+    links:
+      - zookeeper
+    volumes:
+      - './docker-data/kafka:/kafka'
+
+  mqtt:
+    image: eclipse-mosquitto:latest
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./docker-data/mqtt/config:/mosquitto/config
+      - ./docker-data/mqtt/data:/mosquitto/data
+      - ./docker-data/mqtt/log:/mosquitto/log

@@ -1,0 +1,39 @@
+docker-data/kafka/
+docker-data/zookeeper/
+
+
+## Linux ###
+*~
+
+### Intellij ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+.idea/*
+
+# We want to check in run configurations which start with a two digit number
+!.idea/runConfigurations
+.idea/runConfigurations/*
+!.idea/runConfigurations/[0-9][0-9]_*.xml
+
+# We share the findbugs and checkstyle plugin config files
+!.idea/checkstyle-idea.xml
+!.idea/findbugs-idea.xml
+
+# We share code formatting rules per project
+!.idea/codeStyleSettings.xml
+
+!.idea/dataSources.xml
+
+# We want to check in our workarround artifacts
+!.idea/artifacts
+.idea/artifacts/*
+!.idea/artifacts/*_workarround.xml
+
+# We want to share custom html tags
+!.idea/inspectionProfiles
+.idea/inspectionProfiles/*
+!.idea/inspectionProfiles/Project_Default.xml
+
+*.iml
+*.ipr
+*.iws
+.sass-cache
