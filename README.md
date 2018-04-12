@@ -1,12 +1,5 @@
 # Kafka Tests
 
-## Scenario
-1. Patient published auf MQTT Topic /patients/301.1/
-2. MQTT Nachricht geht zu Kafka
-3. Kafka speichert Event
-4. https://howtoprogram.xyz/2016/07/30/apache-kafka-connect-mqtt-source-tutorial/
-
-
 ## docker-compose
 Run docker-compose:
 `docker-compose up -d`
